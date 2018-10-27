@@ -16,29 +16,28 @@ Alternatively, Django offers automatic browsable API interfaces which allow you 
 
 ### Medications API: /api/medications
 ##### GET
-all: /api/medications
-
+all: /api/medications\
 one: /api/medications/{medication_id}
 ##### POST
 /api/medications
 
-JSON body
+JSON body\
 {"name":"Advil"}
+
 ##### DELETE
 /api/medications/id
 
 ### Patients API: /api/patients
 ##### GET
-all: /api/patients
-
+all: /api/patients\
 one: /api/patients/id
 ##### POST
 /api/patients
 
-JSON body
-{
-	"name":"Hettie",
-	"medications":[1,3,5]
+JSON body\
+{\
+  "name":"Hettie",\
+  "medications":[1,3,5]\
 }
 ##### DELETE
 /api/patients/{patient_id}
@@ -49,9 +48,9 @@ JSON body
 ##### POST:
 /api/patient/{patient_id}/medications
 
-JSON body
-{
-	"ids":[1,3,5]
+JSON body\
+{\
+  "ids":[1,3,5]\
 }
 ##### DELETE:
 /api/patient/{patient_id}/medications/{medication_id}
@@ -62,14 +61,10 @@ JSON body
 
 POST /api/medications
 
-{"name":"Robitussin"}
-
-{"name":"Advil"}
-
-{"name":"Tylenol"}
-
-{"name":"Sudafed"}
-
+{"name":"Robitussin"}\
+{"name":"Advil"}\
+{"name":"Tylenol"}\
+{"name":"Sudafed"}\
 {"name":"Benadryl"}
 
 #### Look at all the meds
@@ -88,22 +83,23 @@ GET /api/medications
 
 #### Now add a few patients
 POST /api/patients
-{
-	"name":"Dracula",
-	"medications":[]
-}
-{
-	"name":"Hulk",
-	"medications":[3]
-}
-{
-	"name":"Malfoy",
-	"medications":[2,4]
+
+{\
+  "name":"Dracula",\
+  "medications":[]\
+}\
+{\
+  "name":"Hulk",\
+  "medications":[3]\
+}\
+{\
+  "name":"Malfoy",\
+  "medications":[2,4]\
 }
 
 #### Feel free to look at your patients more or delete ones you aren't fond of
-GET /api/patients
-GET /api/patients/1
+GET /api/patients\
+GET /api/patients/1\
 DELETE /api/patients/1
 
 #### We'll move on to looking at our patients' medications, starting with Malfoy.
@@ -111,8 +107,9 @@ GET /api/patients/3/medications
 
 #### Let's prescribe more medicine to him.
 POST /api/patients/3/medications
-{
-	"ids":[3,5]
+
+{\
+  "ids":[3,5]\
 }
 
 #### Finally, we realize we accidentally prescribed a medicine and want to remove it.
